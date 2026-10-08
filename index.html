@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPU Food Courts - Menu Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
+  </nav>
+
+  <!-- ===== Top Banner ===== -->
+  <header class="hero">
+    <h1>Food Courts of LPU</h1>
+    <p>Select a food court on campus to see all its stores, their menus and prices.</p>
+    <input type="text" id="searchBox" placeholder="Search by food court name or block..." onkeyup="showFoodCourts()">
+  </header>
+
+  <!-- ===== Food Courts List ===== -->
+  <section class="section">
+    <h2 class="section-title">📍 Select a Food Court</h2>
+    <div class="court-grid" id="courtList">
+      <!-- food court cards are added here by JavaScript -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>LPU Food Courts · First year CSE project</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

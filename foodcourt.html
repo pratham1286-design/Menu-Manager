@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Court Menu - LPU Food Courts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
+  </nav>
+
+  <!-- ===== Food Court Details ===== -->
+  <header class="court-header" id="courtHeader">
+    <!-- filled by JavaScript -->
+  </header>
+
+  <!-- ===== Stores and Menus ===== -->
+  <section class="section">
+    <div class="store-links" id="storeLinks">
+      <!-- links to each store added by JavaScript -->
+    </div>
+
+    <div class="filters">
+      <input type="text" id="dishSearch" placeholder="🔍 Search a dish..." onkeyup="showMenu()">
+      <select id="sortBy" onchange="showMenu()">
+        <option value="default">Sort: Recommended</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+      <label class="veg-toggle">
+        <input type="checkbox" id="vegOnly" onchange="showMenu()"> Veg only
+      </label>
+    </div>
+
+    <div id="menuList">
+      <!-- stores and their menus added by JavaScript -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>LPU Food Courts · First year CSE project</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/foodcourt.js"></script>
+</body>
+</html>
