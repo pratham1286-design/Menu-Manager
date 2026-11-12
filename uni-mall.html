@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uni Mall Food Court - LPU Food Courts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
+  </nav>
+
+  <!-- ===== Food Court Details ===== -->
+  <header class="court-header">
+    <a href="index.html" class="back-link">← All food courts</a>
+    <h1>🏬 Uni Mall Food Court</h1>
+    <p>📍 Uni Mall, LPU Campus</p>
+    <p>🕒 9:00 AM - 10:00 PM &nbsp; ⭐ 4.5 &nbsp; 🏪 4 stores</p>
+  </header>
+
+  <!-- ===== Stores and Menus ===== -->
+  <section class="section">
+
+    <!-- Jump to a store -->
+    <div class="store-links">
+      <a href="#punjabi-tadka">Punjabi Tadka</a>
+      <a href="#pizza-hub">Pizza Hub</a>
+      <a href="#wok-and-roll">Wok & Roll</a>
+      <a href="#frosty-shakes">Frosty Shakes</a>
+    </div>
+
+    <!-- Dish search, sort and veg filter -->
+    <div class="filters">
+      <input type="text" id="dishSearch" placeholder="🔍 Search a dish..." onkeyup="filterMenu()">
+      <select id="sortBy">
+        <option value="default">Sort: Recommended</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+      <label class="veg-toggle">
+        <input type="checkbox" id="vegOnly" onchange="filterMenu()"> Veg only
+      </label>
+    </div>
+
+    <!-- Punjabi Tadka -->
+    <div class="store-card" id="punjabi-tadka">
+      <div class="store-head">
+        <div>
+          <span class="badge featured">★ Featured</span>
+          <h2>Punjabi Tadka</h2>
+          <p class="muted">North Indian</p>
+        </div>
+        <span class="rating">⭐ 4.5</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 110">
+          <p><span class="veg-dot"></span>Amritsari Kulcha with Chole <span class="badge best">Bestseller</span></p>
+          <p class="price">₹110</p>
+        </li>
+        <li class="dish veg" style="--price: 130">
+          <p><span class="veg-dot"></span>Dal Makhani with 2 Naan</p>
+          <p class="price">₹130</p>
+        </li>
+        <li class="dish veg" style="--price: 160">
+          <p><span class="veg-dot"></span>Paneer Butter Masala Thali <span class="badge best">Bestseller</span></p>
+          <p class="price">₹160</p>
+        </li>
+        <li class="dish nonveg" style="--price: 190">
+          <p><span class="nonveg-dot"></span>Butter Chicken with Rice <span class="badge best">Bestseller</span></p>
+          <p class="price">₹190</p>
+        </li>
+        <li class="dish veg" style="--price: 50">
+          <p><span class="veg-dot"></span>Sweet Lassi</p>
+          <p class="price">₹50</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Pizza Hub -->
+    <div class="store-card" id="pizza-hub">
+      <div class="store-head">
+        <div>
+          <h2>Pizza Hub</h2>
+          <p class="muted">Italian</p>
+        </div>
+        <span class="rating">⭐ 4.2</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 149">
+          <p><span class="veg-dot"></span>Margherita Pizza (8 inch)</p>
+          <p class="price">₹149</p>
+        </li>
+        <li class="dish veg" style="--price: 199">
+          <p><span class="veg-dot"></span>Farmhouse Pizza (8 inch) <span class="badge best">Bestseller</span></p>
+          <p class="price">₹199</p>
+        </li>
+        <li class="dish nonveg" style="--price: 229">
+          <p><span class="nonveg-dot"></span>Chicken Tikka Pizza (8 inch)</p>
+          <p class="price">₹229</p>
+        </li>
+        <li class="dish veg" style="--price: 99">
+          <p><span class="veg-dot"></span>Garlic Bread with Cheese <span class="badge best">Bestseller</span></p>
+          <p class="price">₹99</p>
+        </li>
+        <li class="dish veg" style="--price: 129">
+          <p><span class="veg-dot"></span>White Sauce Pasta</p>
+          <p class="price">₹129</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Wok & Roll -->
+    <div class="store-card" id="wok-and-roll">
+      <div class="store-head">
+        <div>
+          <h2>Wok & Roll</h2>
+          <p class="muted">Chinese</p>
+        </div>
+        <span class="rating">⭐ 4.1</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 99">
+          <p><span class="veg-dot"></span>Veg Hakka Noodles <span class="badge best">Bestseller</span></p>
+          <p class="price">₹99</p>
+        </li>
+        <li class="dish veg" style="--price: 139">
+          <p><span class="veg-dot"></span>Chilli Paneer Dry</p>
+          <p class="price">₹139</p>
+        </li>
+        <li class="dish nonveg" style="--price: 149">
+          <p><span class="nonveg-dot"></span>Chicken Fried Rice</p>
+          <p class="price">₹149</p>
+        </li>
+        <li class="dish veg" style="--price: 119">
+          <p><span class="veg-dot"></span>Veg Manchurian Gravy</p>
+          <p class="price">₹119</p>
+        </li>
+        <li class="dish nonveg" style="--price: 110">
+          <p><span class="nonveg-dot"></span>Chicken Momos (8 pcs) <span class="badge best">Bestseller</span></p>
+          <p class="price">₹110</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Frosty Shakes -->
+    <div class="store-card" id="frosty-shakes">
+      <div class="store-head">
+        <div>
+          <h2>Frosty Shakes</h2>
+          <p class="muted">Beverages & Desserts</p>
+        </div>
+        <span class="rating">⭐ 4.4</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 80">
+          <p><span class="veg-dot"></span>Cold Coffee <span class="badge best">Bestseller</span></p>
+          <p class="price">₹80</p>
+        </li>
+        <li class="dish veg" style="--price: 100">
+          <p><span class="veg-dot"></span>Oreo Shake <span class="badge best">Bestseller</span></p>
+          <p class="price">₹100</p>
+        </li>
+        <li class="dish veg" style="--price: 90">
+          <p><span class="veg-dot"></span>Mango Smoothie</p>
+          <p class="price">₹90</p>
+        </li>
+        <li class="dish veg" style="--price: 110">
+          <p><span class="veg-dot"></span>Chocolate Brownie with Ice Cream</p>
+          <p class="price">₹110</p>
+        </li>
+        <li class="dish veg" style="--price: 50">
+          <p><span class="veg-dot"></span>Fresh Lime Soda</p>
+          <p class="price">₹50</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="empty" id="noResult" hidden>No dish found. Try a different search.</p>
+  </section>
+
+  <footer class="footer">
+    <p>LPU Food Courts · First year CSE project</p>
+    <h3>Developed by:</h3>
+    <ul>
+      <li>Pratham Singh</li>
+    </ul>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

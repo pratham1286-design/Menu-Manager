@@ -34,6 +34,9 @@ a {
 
 .muted { color: var(--grey); }
 
+/* anything with the "hidden" attribute (set by the search) disappears */
+[hidden] { display: none !important; }
+
 /* ---------- Navbar ---------- */
 .navbar {
   padding: 14px 5%;
@@ -208,10 +211,16 @@ input[type="text"]:focus, select:focus {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 1px solid var(--border);
   padding-bottom: 10px;
 }
 .store-head h2 { font-size: 21px; }
+
+/* the list of dishes in a store */
+.dishes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
 
 .rating {
   background: var(--green);
@@ -228,10 +237,22 @@ input[type="text"]:focus, select:focus {
   justify-content: space-between;
   gap: 10px;
   padding: 10px 0;
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
 }
-.dish:last-child { border-bottom: none; }
 .price { font-weight: 700; white-space: nowrap; }
+
+/* ---------- Sort by price (done with CSS, no JavaScript) ----------
+   Every dish has its price written in the HTML, e.g. style="--price: 110".
+   "order" puts the lowest number first, so cheap dishes go to the top.
+   For "High to Low" we flip the list upside down (column-reverse).
+   ":has(...)" checks which option is picked in the "Sort" dropdown. */
+body:has(#sortBy option[value="low"]:checked) .dish,
+body:has(#sortBy option[value="high"]:checked) .dish {
+  order: var(--price);
+}
+body:has(#sortBy option[value="high"]:checked) .dishes {
+  flex-direction: column-reverse;
+}
 
 /* veg / non-veg symbols (like on food packets) */
 .veg-dot, .nonveg-dot {
@@ -265,6 +286,7 @@ input[type="text"]:focus, select:focus {
   color: #cccccc;
   font-size: 14px;
 }
+.footer ul { list-style: none; }
 
 /* ---------- Phones ---------- */
 @media (max-width: 600px) {
