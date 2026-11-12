@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Gate Food Court - LPU Food Courts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
+  </nav>
+
+  <!-- ===== Food Court Details ===== -->
+  <header class="court-header">
+    <a href="index.html" class="back-link">← All food courts</a>
+    <h1>🚪 Main Gate Food Court</h1>
+    <p>📍 Near Main Gate, LPU Campus</p>
+    <p>🕒 9:00 AM - 9:00 PM &nbsp; ⭐ 4.0 &nbsp; 🏪 3 stores</p>
+  </header>
+
+  <!-- ===== Stores and Menus ===== -->
+  <section class="section">
+
+    <!-- Jump to a store -->
+    <div class="store-links">
+      <a href="#amritsari-kulcha-point">Amritsari Kulcha Point</a>
+      <a href="#momo-magic">Momo Magic</a>
+      <a href="#wok-and-roll">Wok & Roll</a>
+    </div>
+
+    <!-- Dish search, sort and veg filter -->
+    <div class="filters">
+      <input type="text" id="dishSearch" placeholder="🔍 Search a dish..." onkeyup="filterMenu()">
+      <select id="sortBy">
+        <option value="default">Sort: Recommended</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+      <label class="veg-toggle">
+        <input type="checkbox" id="vegOnly" onchange="filterMenu()"> Veg only
+      </label>
+    </div>
+
+    <!-- Amritsari Kulcha Point -->
+    <div class="store-card" id="amritsari-kulcha-point">
+      <div class="store-head">
+        <div>
+          <h2>Amritsari Kulcha Point</h2>
+          <p class="muted">Punjabi</p>
+        </div>
+        <span class="rating">⭐ 4.7</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 80">
+          <p><span class="veg-dot"></span>Aloo Kulcha with Chole <span class="badge best">Bestseller</span></p>
+          <p class="price">₹80</p>
+        </li>
+        <li class="dish veg" style="--price: 100">
+          <p><span class="veg-dot"></span>Paneer Kulcha with Chole <span class="badge best">Bestseller</span></p>
+          <p class="price">₹100</p>
+        </li>
+        <li class="dish veg" style="--price: 90">
+          <p><span class="veg-dot"></span>Chole Bhature</p>
+          <p class="price">₹90</p>
+        </li>
+        <li class="dish veg" style="--price: 50">
+          <p><span class="veg-dot"></span>Lassi (Large)</p>
+          <p class="price">₹50</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Momo Magic -->
+    <div class="store-card" id="momo-magic">
+      <div class="store-head">
+        <div>
+          <h2>Momo Magic</h2>
+          <p class="muted">Tibetan / Snacks</p>
+        </div>
+        <span class="rating">⭐ 4.2</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 70">
+          <p><span class="veg-dot"></span>Veg Steamed Momos (8 pcs)</p>
+          <p class="price">₹70</p>
+        </li>
+        <li class="dish veg" style="--price: 130">
+          <p><span class="veg-dot"></span>Tandoori Momos (8 pcs) <span class="badge best">Bestseller</span></p>
+          <p class="price">₹130</p>
+        </li>
+        <li class="dish nonveg" style="--price: 120">
+          <p><span class="nonveg-dot"></span>Chicken Fried Momos (8 pcs)</p>
+          <p class="price">₹120</p>
+        </li>
+        <li class="dish veg" style="--price: 100">
+          <p><span class="veg-dot"></span>Chilli Garlic Noodles</p>
+          <p class="price">₹100</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Wok & Roll -->
+    <div class="store-card" id="wok-and-roll">
+      <div class="store-head">
+        <div>
+          <h2>Wok & Roll</h2>
+          <p class="muted">Chinese</p>
+        </div>
+        <span class="rating">⭐ 4.0</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 100">
+          <p><span class="veg-dot"></span>Schezwan Noodles</p>
+          <p class="price">₹100</p>
+        </li>
+        <li class="dish veg" style="--price: 110">
+          <p><span class="veg-dot"></span>Honey Chilli Potato <span class="badge best">Bestseller</span></p>
+          <p class="price">₹110</p>
+        </li>
+        <li class="dish nonveg" style="--price: 160">
+          <p><span class="nonveg-dot"></span>Chilli Chicken Dry <span class="badge best">Bestseller</span></p>
+          <p class="price">₹160</p>
+        </li>
+        <li class="dish veg" style="--price: 90">
+          <p><span class="veg-dot"></span>Veg Spring Rolls</p>
+          <p class="price">₹90</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="empty" id="noResult" hidden>No dish found. Try a different search.</p>
+  </section>
+
+  <footer class="footer">
+    <p>LPU Food Courts · First year CSE project</p>
+    <h3>Developed by:</h3>
+    <ul>
+      <li>Pratham Singh</li>
+    </ul>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

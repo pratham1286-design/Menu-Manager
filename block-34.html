@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block 34 Food Court - LPU Food Courts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
+  </nav>
+
+  <!-- ===== Food Court Details ===== -->
+  <header class="court-header">
+    <a href="index.html" class="back-link">← All food courts</a>
+    <h1>🎓 Block 34 Food Court</h1>
+    <p>📍 Block 34, Academic Area, LPU Campus</p>
+    <p>🕒 8:00 AM - 8:00 PM &nbsp; ⭐ 4.3 &nbsp; 🏪 3 stores</p>
+  </header>
+
+  <!-- ===== Stores and Menus ===== -->
+  <section class="section">
+
+    <!-- Jump to a store -->
+    <div class="store-links">
+      <a href="#student-thali-point">Student Thali Point</a>
+      <a href="#momo-magic">Momo Magic</a>
+      <a href="#kulhad-chai-corner">Kulhad Chai Corner</a>
+    </div>
+
+    <!-- Dish search, sort and veg filter -->
+    <div class="filters">
+      <input type="text" id="dishSearch" placeholder="🔍 Search a dish..." onkeyup="filterMenu()">
+      <select id="sortBy">
+        <option value="default">Sort: Recommended</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+      <label class="veg-toggle">
+        <input type="checkbox" id="vegOnly" onchange="filterMenu()"> Veg only
+      </label>
+    </div>
+
+    <!-- Student Thali Point -->
+    <div class="store-card" id="student-thali-point">
+      <div class="store-head">
+        <div>
+          <span class="badge featured">★ Featured</span>
+          <h2>Student Thali Point</h2>
+          <p class="muted">Home Style Meals</p>
+        </div>
+        <span class="rating">⭐ 4.3</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 90">
+          <p><span class="veg-dot"></span>Mini Veg Thali <span class="badge best">Bestseller</span></p>
+          <p class="price">₹90</p>
+        </li>
+        <li class="dish veg" style="--price: 80">
+          <p><span class="veg-dot"></span>Rajma Chawal <span class="badge best">Bestseller</span></p>
+          <p class="price">₹80</p>
+        </li>
+        <li class="dish veg" style="--price: 75">
+          <p><span class="veg-dot"></span>Kadhi Chawal</p>
+          <p class="price">₹75</p>
+        </li>
+        <li class="dish veg" style="--price: 70">
+          <p><span class="veg-dot"></span>Aloo Paratha with Curd (2 pcs)</p>
+          <p class="price">₹70</p>
+        </li>
+        <li class="dish nonveg" style="--price: 100">
+          <p><span class="nonveg-dot"></span>Egg Curry with Rice</p>
+          <p class="price">₹100</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Momo Magic -->
+    <div class="store-card" id="momo-magic">
+      <div class="store-head">
+        <div>
+          <h2>Momo Magic</h2>
+          <p class="muted">Tibetan / Snacks</p>
+        </div>
+        <span class="rating">⭐ 4.4</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 70">
+          <p><span class="veg-dot"></span>Veg Steamed Momos (8 pcs) <span class="badge best">Bestseller</span></p>
+          <p class="price">₹70</p>
+        </li>
+        <li class="dish veg" style="--price: 100">
+          <p><span class="veg-dot"></span>Paneer Fried Momos (8 pcs)</p>
+          <p class="price">₹100</p>
+        </li>
+        <li class="dish nonveg" style="--price: 110">
+          <p><span class="nonveg-dot"></span>Chicken Steamed Momos (8 pcs) <span class="badge best">Bestseller</span></p>
+          <p class="price">₹110</p>
+        </li>
+        <li class="dish veg" style="--price: 120">
+          <p><span class="veg-dot"></span>Kurkure Momos (8 pcs)</p>
+          <p class="price">₹120</p>
+        </li>
+        <li class="dish veg" style="--price: 90">
+          <p><span class="veg-dot"></span>Veg Thukpa</p>
+          <p class="price">₹90</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Kulhad Chai Corner -->
+    <div class="store-card" id="kulhad-chai-corner">
+      <div class="store-head">
+        <div>
+          <h2>Kulhad Chai Corner</h2>
+          <p class="muted">Tea & Snacks</p>
+        </div>
+        <span class="rating">⭐ 4.6</span>
+      </div>
+      <ul class="dishes">
+        <li class="dish veg" style="--price: 25">
+          <p><span class="veg-dot"></span>Kulhad Masala Chai <span class="badge best">Bestseller</span></p>
+          <p class="price">₹25</p>
+        </li>
+        <li class="dish veg" style="--price: 35">
+          <p><span class="veg-dot"></span>Bun Maska <span class="badge best">Bestseller</span></p>
+          <p class="price">₹35</p>
+        </li>
+        <li class="dish veg" style="--price: 30">
+          <p><span class="veg-dot"></span>Samosa (2 pcs)</p>
+          <p class="price">₹30</p>
+        </li>
+        <li class="dish veg" style="--price: 30">
+          <p><span class="veg-dot"></span>Bread Pakora</p>
+          <p class="price">₹30</p>
+        </li>
+        <li class="dish veg" style="--price: 50">
+          <p><span class="veg-dot"></span>Maggi Masala</p>
+          <p class="price">₹50</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="empty" id="noResult" hidden>No dish found. Try a different search.</p>
+  </section>
+
+  <footer class="footer">
+    <p>LPU Food Courts · First year CSE project</p>
+    <h3>Developed by:</h3>
+    <ul>
+      <li>Pratham Singh</li>
+    </ul>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
