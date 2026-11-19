@@ -3,155 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Girls Hostel Food Court - LPU Food Courts</title>
+  <title>Girls Hostel Food Court | LPU Food Courts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Young+Serif&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== Navigation Bar ===== -->
-  <nav class="navbar">
-    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
-  </nav>
-
-  <!-- ===== Food Court Details ===== -->
-  <header class="court-header">
-    <a href="index.html" class="back-link">← All food courts</a>
-    <h1>🏡 Girls Hostel Food Court</h1>
-    <p>📍 Girls Hostel Area, LPU Campus</p>
-    <p>🕒 7:30 AM - 10:30 PM &nbsp; ⭐ 4.3 &nbsp; 🏪 3 stores</p>
+  <header class="top">
+    <a href="index.html" class="site-name">LPU Food Courts</a>
+    <a href="index.html">All food courts</a>
   </header>
 
-  <!-- ===== Stores and Menus ===== -->
-  <section class="section">
+  <main>
+    <h1>Girls Hostel Food Court</h1>
+    <p class="where">Girls Hostel Area</p>
 
-    <!-- Jump to a store -->
-    <div class="store-links">
+    <dl class="facts">
+      <div><dt>Open</dt><dd>7:30 AM – 10:30 PM</dd></div>
+      <div><dt>Rating</dt><dd>★ 4.3</dd></div>
+      <div><dt>Stores</dt><dd>3</dd></div>
+    </dl>
+
+    <p class="jump">Jump to:
       <a href="#sweet-tooth-desserts">Sweet Tooth Desserts</a>
       <a href="#healthy-bowl">Healthy Bowl</a>
       <a href="#frosty-shakes">Frosty Shakes</a>
-    </div>
+    </p>
 
-    <!-- Dish search, sort and veg filter -->
-    <div class="filters">
-      <input type="text" id="dishSearch" placeholder="🔍 Search a dish..." onkeyup="filterMenu()">
-      <select id="sortBy">
-        <option value="default">Sort: Recommended</option>
-        <option value="low">Price: Low to High</option>
-        <option value="high">Price: High to Low</option>
-      </select>
-      <label class="veg-toggle">
-        <input type="checkbox" id="vegOnly" onchange="filterMenu()"> Veg only
+    <div class="tools">
+      <input type="search" placeholder="Search a dish" aria-label="Search a dish" oninput="search(this, '.dish')">
+      <label>Sort
+        <select id="sort">
+          <option value="none">as listed</option>
+          <option value="low">cheapest first</option>
+          <option value="high">costliest first</option>
+        </select>
       </label>
+      <label class="veg-only"><input type="checkbox" id="vegOnly"> Veg only</label>
     </div>
 
-    <!-- Sweet Tooth Desserts -->
-    <div class="store-card" id="sweet-tooth-desserts">
-      <div class="store-head">
-        <div>
-          <h2>Sweet Tooth Desserts</h2>
-          <p class="muted">Desserts</p>
-        </div>
-        <span class="rating">⭐ 4.5</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 40">
-          <p><span class="veg-dot"></span>Gulab Jamun (2 pcs)</p>
-          <p class="price">₹40</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Rasmalai (2 pcs) <span class="badge best">Bestseller</span></p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 80">
-          <p><span class="veg-dot"></span>Kulfi Falooda <span class="badge best">Bestseller</span></p>
-          <p class="price">₹80</p>
-        </li>
-        <li class="dish veg" style="--price: 110">
-          <p><span class="veg-dot"></span>Belgian Waffle</p>
-          <p class="price">₹110</p>
-        </li>
-        <li class="dish veg" style="--price: 90">
-          <p><span class="veg-dot"></span>Ice Cream Sundae</p>
-          <p class="price">₹90</p>
-        </li>
-      </ul>
+    <div class="menu">
+
+      <section class="store" id="sweet-tooth-desserts">
+        <h2>Sweet Tooth Desserts <span class="rating">★ 4.5</span></h2>
+        <p class="cuisine">Desserts</p>
+        <ul>
+          <li class="dish veg" style="--price: 40"><span>Gulab Jamun (2 pcs)</span> <b>₹40</b></li>
+          <li class="dish veg" style="--price: 60"><span>Rasmalai (2 pcs) <small>Bestseller</small></span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 80"><span>Kulfi Falooda <small>Bestseller</small></span> <b>₹80</b></li>
+          <li class="dish veg" style="--price: 110"><span>Belgian Waffle</span> <b>₹110</b></li>
+          <li class="dish veg" style="--price: 90"><span>Ice Cream Sundae</span> <b>₹90</b></li>
+        </ul>
+      </section>
+
+      <section class="store" id="healthy-bowl">
+        <h2>Healthy Bowl <span class="rating">★ 4.2</span></h2>
+        <p class="cuisine">Salads &amp; Sandwiches</p>
+        <ul>
+          <li class="dish veg" style="--price: 60"><span>Veg Grilled Sandwich <small>Bestseller</small></span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 80"><span>Paneer Sandwich</span> <b>₹80</b></li>
+          <li class="dish veg" style="--price: 70"><span>Fruit Bowl</span> <b>₹70</b></li>
+          <li class="dish nonveg" style="--price: 120"><span>Chicken Salad Bowl</span> <b>₹120</b></li>
+          <li class="dish veg" style="--price: 50"><span>Sprouts Chaat <small>Bestseller</small></span> <b>₹50</b></li>
+        </ul>
+      </section>
+
+      <section class="store" id="frosty-shakes">
+        <h2>Frosty Shakes <span class="rating">★ 4.3</span></h2>
+        <p class="cuisine">Beverages</p>
+        <ul>
+          <li class="dish veg" style="--price: 80"><span>Cold Coffee <small>Bestseller</small></span> <b>₹80</b></li>
+          <li class="dish veg" style="--price: 110"><span>KitKat Shake</span> <b>₹110</b></li>
+          <li class="dish veg" style="--price: 90"><span>Strawberry Shake</span> <b>₹90</b></li>
+          <li class="dish veg" style="--price: 80"><span>Blue Lagoon Mocktail</span> <b>₹80</b></li>
+          <li class="dish veg" style="--price: 90"><span>Hot Chocolate</span> <b>₹90</b></li>
+        </ul>
+      </section>
     </div>
+    <p class="no-result">No dish matches that. Try another name, or untick "Veg only".</p>
+  </main>
 
-    <!-- Healthy Bowl -->
-    <div class="store-card" id="healthy-bowl">
-      <div class="store-head">
-        <div>
-          <h2>Healthy Bowl</h2>
-          <p class="muted">Salads & Sandwiches</p>
-        </div>
-        <span class="rating">⭐ 4.2</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Veg Grilled Sandwich <span class="badge best">Bestseller</span></p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 80">
-          <p><span class="veg-dot"></span>Paneer Sandwich</p>
-          <p class="price">₹80</p>
-        </li>
-        <li class="dish veg" style="--price: 70">
-          <p><span class="veg-dot"></span>Fruit Bowl</p>
-          <p class="price">₹70</p>
-        </li>
-        <li class="dish nonveg" style="--price: 120">
-          <p><span class="nonveg-dot"></span>Chicken Salad Bowl</p>
-          <p class="price">₹120</p>
-        </li>
-        <li class="dish veg" style="--price: 50">
-          <p><span class="veg-dot"></span>Sprouts Chaat <span class="badge best">Bestseller</span></p>
-          <p class="price">₹50</p>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Frosty Shakes -->
-    <div class="store-card" id="frosty-shakes">
-      <div class="store-head">
-        <div>
-          <h2>Frosty Shakes</h2>
-          <p class="muted">Beverages</p>
-        </div>
-        <span class="rating">⭐ 4.3</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 80">
-          <p><span class="veg-dot"></span>Cold Coffee <span class="badge best">Bestseller</span></p>
-          <p class="price">₹80</p>
-        </li>
-        <li class="dish veg" style="--price: 110">
-          <p><span class="veg-dot"></span>KitKat Shake</p>
-          <p class="price">₹110</p>
-        </li>
-        <li class="dish veg" style="--price: 90">
-          <p><span class="veg-dot"></span>Strawberry Shake</p>
-          <p class="price">₹90</p>
-        </li>
-        <li class="dish veg" style="--price: 80">
-          <p><span class="veg-dot"></span>Blue Lagoon Mocktail</p>
-          <p class="price">₹80</p>
-        </li>
-        <li class="dish veg" style="--price: 90">
-          <p><span class="veg-dot"></span>Hot Chocolate</p>
-          <p class="price">₹90</p>
-        </li>
-      </ul>
-    </div>
-
-    <p class="empty" id="noResult" hidden>No dish found. Try a different search.</p>
-  </section>
-
-  <footer class="footer">
-    <p>LPU Food Courts · First year CSE project</p>
-    <h3>Developed by:</h3>
-    <ul>
-      <li>Pratham Singh</li>
-    </ul>
+  <footer>
+    Made by Pratham Singh, first year CSE at LPU. Prices change now and then, so check at the counter.
   </footer>
 
   <script src="js/script.js"></script>

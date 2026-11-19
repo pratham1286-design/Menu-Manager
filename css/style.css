@@ -1,301 +1,394 @@
-/* =====================================================
-   style.css - styles for both pages
-   ===================================================== */
+/* LPU Food Courts - one stylesheet for all the pages.
+   The look is meant to feel like a printed menu card:
+   off-white paper, dark ink, one blue for small highlights. */
 
-/* ---------- Colours (change these to re-theme the site) ---------- */
 :root {
-  --primary: #ff6b35;
-  --dark: #2d2d2d;
-  --grey: #777777;
-  --light: #fff7f2;
-  --border: #eeeeee;
-  --white: #ffffff;
-  --green: #1a9c4a;
-  --red: #d63031;
+  --paper: #f6f4ee;
+  --paper-dark: #ebe7dc;
+  --field: #fdfcf8;
+  --ink: #1f2a2e;
+  --muted: #59656a;
+  --line: #d3cdbf;
+  --blue: #1d4e89;
+  --veg: #17803a;
+  --nonveg: #b3261e;
+
+  --serif: "Young Serif", Georgia, serif;
+  --sans: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+
+html, body { overflow-x: clip; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #fafafa;
-  color: var(--dark);
-  line-height: 1.5;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 var(--sans);
 }
 
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.muted { color: var(--grey); }
-
-/* anything with the "hidden" attribute (set by the search) disappears */
 [hidden] { display: none !important; }
 
-/* ---------- Navbar ---------- */
-.navbar {
-  padding: 14px 5%;
-  background: var(--white);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+a { color: inherit; text-underline-offset: 3px; }
+a:hover { color: var(--blue); }
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--dark);
-}
-.logo span { color: var(--primary); }
-
-/* ---------- Top banner (home page) ---------- */
-.hero {
-  background: linear-gradient(135deg, #ff6b35, #ff9f1c);
-  color: var(--white);
-  text-align: center;
-  padding: 50px 5%;
-}
-.hero h1 { font-size: 34px; margin-bottom: 8px; }
-.hero p { font-size: 18px; }
-
-.hero input {
-  max-width: 550px;
-  margin-top: 22px;
+h1, h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
 }
 
-/* ---------- Search boxes and dropdowns ---------- */
-input[type="text"], select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  font-size: 15px;
-  font-family: inherit;
-  background: var(--white);
-}
-input[type="text"]:focus, select:focus {
-  outline: none;
-  border-color: var(--primary);
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  line-height: 1.05;
+  max-width: 16ch;
+  overflow-wrap: anywhere;
 }
 
-/* ---------- Badges ---------- */
-.badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 20px;
-  vertical-align: middle;
-}
-.badge.featured { background: #fff3cd; color: #a07800; }
-.badge.best { background: #ffe5dc; color: #e85a26; }
 
-/* ---------- Sections ---------- */
-.section {
-  padding: 30px 5%;
-  max-width: 1100px;
+/* top bar and footer */
+
+.top,
+main,
+footer {
+  max-width: 1040px;
   margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-.section-title {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.empty {
-  text-align: center;
-  padding: 40px 10px;
-  color: var(--grey);
-  grid-column: 1 / -1;
-}
-
-/* ---------- Food court cards ---------- */
-.court-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.court-card {
+.top {
   display: flex;
-  gap: 15px;
-  background: var(--white);
-  color: var(--dark);
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-  transition: transform 0.2s;
-}
-.court-card:hover { transform: translateY(-4px); }
-
-.court-icon {
-  font-size: 38px;
-  background: var(--light);
-  border-radius: 12px;
-  width: 70px;
-  height: 70px;
-  min-width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.court-info h3 { font-size: 19px; margin-bottom: 4px; }
-.court-info p { font-size: 14px; }
-
-/* ---------- Food court page header ---------- */
-.court-header {
-  background: linear-gradient(135deg, #ff6b35, #ff9f1c);
-  color: var(--white);
-  padding: 30px 5%;
-}
-.court-header h1 { font-size: 30px; margin: 5px 0; }
-.back-link { color: var(--white); font-size: 14px; }
-
-/* ---------- Store links ---------- */
-.store-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-.store-links a {
-  background: var(--white);
-  color: var(--dark);
-  border: 1px solid #dddddd;
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 14px;
-}
-.store-links a:hover { border-color: var(--primary); color: var(--primary); }
-
-/* ---------- Dish search, sort and veg filter ---------- */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.filters input[type="text"] { flex: 2; min-width: 180px; }
-.filters select { flex: 1; min-width: 160px; width: auto; }
-
-.veg-toggle {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--white);
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  padding: 0 14px;
-  cursor: pointer;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-top: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
   white-space: nowrap;
 }
 
-/* ---------- Store menu cards ---------- */
-.store-card {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  scroll-margin-top: 70px;   /* so the sticky navbar doesn't cover the title */
+.site-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  text-decoration: none;
 }
 
-.store-head {
+main {
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 32px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+/* small things used on both pages */
+
+.tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 6px;
+  border: 1px solid currentColor;
+  color: var(--blue);
+  font: 600 0.75rem/1.6 var(--sans);
+  vertical-align: middle;
+}
+
+input[type="search"],
+select {
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--field);
+  color: var(--ink);
+  font: inherit;
+}
+
+input[type="search"]:hover,
+select:hover { border-color: var(--muted); }
+
+input[type="search"]:focus { border-color: var(--blue); }
+
+::placeholder { color: var(--muted); }
+
+.no-result {
+  display: none;
+  padding: 32px 0;
+  color: var(--muted);
+}
+
+
+/* home page */
+
+.intro {
+  max-width: 52ch;
+  margin: 16px 0 32px;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.court-search {
+  width: 100%;
+  max-width: 420px;
+}
+
+.courts {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+
+.courts li { border-bottom: 1px solid var(--line); }
+
+.courts a {
+  display: grid;
+  grid-template-columns: 2.4fr 1.8fr 1.6fr 0.8fr 0.6fr;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.courts a:hover { background: var(--paper-dark); }
+
+.courts .name {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+.courts a:hover .name { color: var(--blue); }
+
+.courts .rating { text-align: right; }
+
+/* the search on the home page found nothing */
+.courts:not(:has(li:not([hidden]))) + .no-result { display: block; }
+
+
+/* food court page */
+
+.where {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  margin: 28px 0 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.jump { color: var(--muted); }
+.jump a { margin-left: 10px; color: var(--ink); white-space: nowrap; }
+.jump a:hover { color: var(--blue); }
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 20px 0 48px;
+  padding: 14px;
+  background: var(--paper-dark);
+}
+
+.tools input[type="search"] { flex: 1 1 240px; }
+
+.tools label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.veg-only { cursor: pointer; }
+
+.veg-only input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--veg);
+}
+
+/* stores sit two to a row, like the two sides of a menu card */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px 64px;
+}
+
+.store { scroll-margin-top: 16px; }
+
+.store h2 {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding-bottom: 10px;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ink);
+  font-size: 1.75rem;
+  line-height: 1.2;
 }
-.store-head h2 { font-size: 21px; }
 
-/* the list of dishes in a store */
-.dishes {
+.store h2 .rating {
+  color: var(--muted);
+  font: 600 0.9rem var(--sans);
+  white-space: nowrap;
+}
+
+.cuisine {
+  margin: 8px 0 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.store ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
 
-.rating {
-  background: var(--green);
-  color: var(--white);
-  font-size: 13px;
+/* one line of the menu: mark, name, dotted line, price */
+.dish {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.dish span { min-width: 0; }
+
+.dish small {
+  margin-left: 6px;
+  color: var(--blue);
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 6px;
   white-space: nowrap;
 }
 
-.dish {
+/* the price grows to fill the row; its ::before is the dotted line,
+   and align-items: baseline puts the dots on the same line as the text */
+.dish b {
+  flex: 1 0 auto;
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 0;
-  border-top: 1px solid var(--border);
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
-.price { font-weight: 700; white-space: nowrap; }
 
-/* ---------- Sort by price (done with CSS, no JavaScript) ----------
-   Every dish has its price written in the HTML, e.g. style="--price: 110".
-   "order" puts the lowest number first, so cheap dishes go to the top.
-   For "High to Low" we flip the list upside down (column-reverse).
-   ":has(...)" checks which option is picked in the "Sort" dropdown. */
-body:has(#sortBy option[value="low"]:checked) .dish,
-body:has(#sortBy option[value="high"]:checked) .dish {
+.dish b::before {
+  content: "";
+  flex: 1;
+  min-width: 24px;
+  border-bottom: 2px dotted var(--line);
+}
+
+/* the green / red square from food packets */
+.dish::before {
+  content: "";
+  flex: none;
+  align-self: flex-start;
+  width: 13px;
+  height: 13px;
+  margin-top: 6px;
+  border: 1.5px solid var(--veg);
+  background: radial-gradient(circle, var(--veg) 3px, transparent 3.5px);
+}
+
+.dish.nonveg::before {
+  border-color: var(--nonveg);
+  background: radial-gradient(circle, var(--nonveg) 3px, transparent 3.5px);
+}
+
+
+/* "Veg only" - no JavaScript needed, CSS checks the tick box */
+body:has(#vegOnly:checked) .nonveg { display: none; }
+body:has(#vegOnly:checked) .store:not(:has(.veg:not([hidden]))) { display: none; }
+
+/* hide a store when the search hid all of its dishes */
+.store:not(:has(.dish:not([hidden]))) { display: none; }
+
+/* nothing left on the whole page */
+.menu:not(:has(.dish:not([hidden]))) + .no-result,
+body:has(#vegOnly:checked) .menu:not(:has(.veg:not([hidden]))) + .no-result {
+  display: block;
+}
+
+/* Sort by price. Every dish has its price in style="--price: 80" and
+   `order` puts the smallest number first. For costliest first the
+   list is simply turned upside down. */
+body:has(#sort option[value="low"]:checked) .dish,
+body:has(#sort option[value="high"]:checked) .dish {
   order: var(--price);
 }
-body:has(#sortBy option[value="high"]:checked) .dishes {
+
+body:has(#sort option[value="high"]:checked) .store ul {
   flex-direction: column-reverse;
 }
 
-/* veg / non-veg symbols (like on food packets) */
-.veg-dot, .nonveg-dot {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--green);
-  margin-right: 8px;
-  vertical-align: middle;
-  position: relative;
-}
-.veg-dot::after, .nonveg-dot::after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  top: 2px;
-  left: 2px;
-}
-.nonveg-dot { border-color: var(--red); }
-.nonveg-dot::after { background: var(--red); }
 
-/* ---------- Footer ---------- */
-.footer {
-  text-align: center;
-  padding: 20px 5%;
-  margin-top: 20px;
-  background: var(--dark);
-  color: #cccccc;
-  font-size: 14px;
-}
-.footer ul { list-style: none; }
+/* tablets and phones */
 
-/* ---------- Phones ---------- */
-@media (max-width: 600px) {
-  .hero { padding: 35px 16px; }
-  .hero h1 { font-size: 26px; }
-  .hero p { font-size: 16px; }
-  .section { padding: 20px 16px; }
-  .navbar { padding: 12px 16px; }
-  .court-grid { grid-template-columns: 1fr; }
-  .court-header { padding: 24px 16px; }
-  .court-header h1 { font-size: 24px; }
+@media (max-width: 800px) {
+  .menu { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+
+  .courts a {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 14px;
+    padding: 16px 4px;
+    font-size: 0.95rem;
+  }
+
+  .courts .name { width: 100%; margin-bottom: 4px; }
+}
+
+@media (max-width: 480px) {
+  .top, main, footer { padding-left: 16px; padding-right: 16px; }
+  main { padding-top: 32px; }
+  .tools { margin-bottom: 36px; }
+  .tools label:first-of-type { flex: 1; }
+  .tools select { flex: 1; }
+  .store h2 { font-size: 1.5rem; }
 }

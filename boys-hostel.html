@@ -3,156 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boys Hostel Food Court - LPU Food Courts</title>
+  <title>Boys Hostel Food Court | LPU Food Courts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Young+Serif&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== Navigation Bar ===== -->
-  <nav class="navbar">
-    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
-  </nav>
-
-  <!-- ===== Food Court Details ===== -->
-  <header class="court-header">
-    <a href="index.html" class="back-link">← All food courts</a>
-    <h1>🏠 Boys Hostel Food Court</h1>
-    <p>📍 Boys Hostel Area, LPU Campus</p>
-    <p>🕒 7:30 AM - 11:30 PM &nbsp; ⭐ 4.1 &nbsp; 🏪 3 stores</p>
+  <header class="top">
+    <a href="index.html" class="site-name">LPU Food Courts</a>
+    <a href="index.html">All food courts</a>
   </header>
 
-  <!-- ===== Stores and Menus ===== -->
-  <section class="section">
+  <main>
+    <h1>Boys Hostel Food Court</h1>
+    <p class="where">Boys Hostel Area</p>
 
-    <!-- Jump to a store -->
-    <div class="store-links">
+    <dl class="facts">
+      <div><dt>Open</dt><dd>7:30 AM – 11:30 PM</dd></div>
+      <div><dt>Rating</dt><dd>★ 4.1</dd></div>
+      <div><dt>Stores</dt><dd>3</dd></div>
+    </dl>
+
+    <p class="jump">Jump to:
       <a href="#biryani-house">Biryani House</a>
       <a href="#burger-barn">Burger Barn</a>
       <a href="#night-canteen">Night Canteen</a>
-    </div>
+    </p>
 
-    <!-- Dish search, sort and veg filter -->
-    <div class="filters">
-      <input type="text" id="dishSearch" placeholder="🔍 Search a dish..." onkeyup="filterMenu()">
-      <select id="sortBy">
-        <option value="default">Sort: Recommended</option>
-        <option value="low">Price: Low to High</option>
-        <option value="high">Price: High to Low</option>
-      </select>
-      <label class="veg-toggle">
-        <input type="checkbox" id="vegOnly" onchange="filterMenu()"> Veg only
+    <div class="tools">
+      <input type="search" placeholder="Search a dish" aria-label="Search a dish" oninput="search(this, '.dish')">
+      <label>Sort
+        <select id="sort">
+          <option value="none">as listed</option>
+          <option value="low">cheapest first</option>
+          <option value="high">costliest first</option>
+        </select>
       </label>
+      <label class="veg-only"><input type="checkbox" id="vegOnly"> Veg only</label>
     </div>
 
-    <!-- Biryani House -->
-    <div class="store-card" id="biryani-house">
-      <div class="store-head">
-        <div>
-          <span class="badge featured">★ Featured</span>
-          <h2>Biryani House</h2>
-          <p class="muted">Mughlai</p>
-        </div>
-        <span class="rating">⭐ 4.6</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 120">
-          <p><span class="veg-dot"></span>Veg Dum Biryani</p>
-          <p class="price">₹120</p>
-        </li>
-        <li class="dish nonveg" style="--price: 160">
-          <p><span class="nonveg-dot"></span>Chicken Dum Biryani <span class="badge best">Bestseller</span></p>
-          <p class="price">₹160</p>
-        </li>
-        <li class="dish nonveg" style="--price: 130">
-          <p><span class="nonveg-dot"></span>Egg Biryani</p>
-          <p class="price">₹130</p>
-        </li>
-        <li class="dish veg" style="--price: 140">
-          <p><span class="veg-dot"></span>Paneer Tikka (6 pcs)</p>
-          <p class="price">₹140</p>
-        </li>
-        <li class="dish veg" style="--price: 50">
-          <p><span class="veg-dot"></span>Phirni</p>
-          <p class="price">₹50</p>
-        </li>
-      </ul>
+    <div class="menu">
+
+      <section class="store" id="biryani-house">
+        <h2>Biryani House <span class="rating">★ 4.6</span></h2>
+        <p class="cuisine">Mughlai <span class="tag">Featured</span></p>
+        <ul>
+          <li class="dish veg" style="--price: 120"><span>Veg Dum Biryani</span> <b>₹120</b></li>
+          <li class="dish nonveg" style="--price: 160"><span>Chicken Dum Biryani <small>Bestseller</small></span> <b>₹160</b></li>
+          <li class="dish nonveg" style="--price: 130"><span>Egg Biryani</span> <b>₹130</b></li>
+          <li class="dish veg" style="--price: 140"><span>Paneer Tikka (6 pcs)</span> <b>₹140</b></li>
+          <li class="dish veg" style="--price: 50"><span>Phirni</span> <b>₹50</b></li>
+        </ul>
+      </section>
+
+      <section class="store" id="burger-barn">
+        <h2>Burger Barn <span class="rating">★ 4.1</span></h2>
+        <p class="cuisine">Fast Food</p>
+        <ul>
+          <li class="dish veg" style="--price: 70"><span>Classic Veg Burger</span> <b>₹70</b></li>
+          <li class="dish nonveg" style="--price: 110"><span>Crispy Chicken Burger <small>Bestseller</small></span> <b>₹110</b></li>
+          <li class="dish veg" style="--price: 120"><span>Double Cheese Burger <small>Bestseller</small></span> <b>₹120</b></li>
+          <li class="dish veg" style="--price: 80"><span>Peri Peri Fries</span> <b>₹80</b></li>
+          <li class="dish nonveg" style="--price: 100"><span>Chicken Nuggets (6 pcs)</span> <b>₹100</b></li>
+        </ul>
+      </section>
+
+      <section class="store" id="night-canteen">
+        <h2>Night Canteen <span class="rating">★ 4.4</span></h2>
+        <p class="cuisine">Late Night Snacks</p>
+        <ul>
+          <li class="dish veg" style="--price: 40"><span>Maggi Masala <small>Bestseller</small></span> <b>₹40</b></li>
+          <li class="dish veg" style="--price: 60"><span>Cheese Maggi</span> <b>₹60</b></li>
+          <li class="dish nonveg" style="--price: 70"><span>Egg Bhurji with Pav <small>Bestseller</small></span> <b>₹70</b></li>
+          <li class="dish nonveg" style="--price: 60"><span>Bread Omelette</span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 20"><span>Masala Chai</span> <b>₹20</b></li>
+        </ul>
+      </section>
     </div>
+    <p class="no-result">No dish matches that. Try another name, or untick "Veg only".</p>
+  </main>
 
-    <!-- Burger Barn -->
-    <div class="store-card" id="burger-barn">
-      <div class="store-head">
-        <div>
-          <h2>Burger Barn</h2>
-          <p class="muted">Fast Food</p>
-        </div>
-        <span class="rating">⭐ 4.1</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 70">
-          <p><span class="veg-dot"></span>Classic Veg Burger</p>
-          <p class="price">₹70</p>
-        </li>
-        <li class="dish nonveg" style="--price: 110">
-          <p><span class="nonveg-dot"></span>Crispy Chicken Burger <span class="badge best">Bestseller</span></p>
-          <p class="price">₹110</p>
-        </li>
-        <li class="dish veg" style="--price: 120">
-          <p><span class="veg-dot"></span>Double Cheese Burger <span class="badge best">Bestseller</span></p>
-          <p class="price">₹120</p>
-        </li>
-        <li class="dish veg" style="--price: 80">
-          <p><span class="veg-dot"></span>Peri Peri Fries</p>
-          <p class="price">₹80</p>
-        </li>
-        <li class="dish nonveg" style="--price: 100">
-          <p><span class="nonveg-dot"></span>Chicken Nuggets (6 pcs)</p>
-          <p class="price">₹100</p>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Night Canteen -->
-    <div class="store-card" id="night-canteen">
-      <div class="store-head">
-        <div>
-          <h2>Night Canteen</h2>
-          <p class="muted">Late Night Snacks</p>
-        </div>
-        <span class="rating">⭐ 4.4</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 40">
-          <p><span class="veg-dot"></span>Maggi Masala <span class="badge best">Bestseller</span></p>
-          <p class="price">₹40</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Cheese Maggi</p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish nonveg" style="--price: 70">
-          <p><span class="nonveg-dot"></span>Egg Bhurji with Pav <span class="badge best">Bestseller</span></p>
-          <p class="price">₹70</p>
-        </li>
-        <li class="dish nonveg" style="--price: 60">
-          <p><span class="nonveg-dot"></span>Bread Omelette</p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 20">
-          <p><span class="veg-dot"></span>Masala Chai</p>
-          <p class="price">₹20</p>
-        </li>
-      </ul>
-    </div>
-
-    <p class="empty" id="noResult" hidden>No dish found. Try a different search.</p>
-  </section>
-
-  <footer class="footer">
-    <p>LPU Food Courts · First year CSE project</p>
-    <h3>Developed by:</h3>
-    <ul>
-      <li>Pratham Singh</li>
-    </ul>
+  <footer>
+    Made by Pratham Singh, first year CSE at LPU. Prices change now and then, so check at the counter.
   </footer>
 
   <script src="js/script.js"></script>

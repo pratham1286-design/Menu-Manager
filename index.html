@@ -3,100 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LPU Food Courts - Menu Manager</title>
+  <title>LPU Food Courts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Young+Serif&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== Navigation Bar ===== -->
-  <nav class="navbar">
-    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
-  </nav>
-
-  <!-- ===== Top Banner ===== -->
-  <header class="hero">
-    <h1>Food Courts of LPU</h1>
-    <p>Select a food court on campus to see all its stores, their menus and prices.</p>
-    <input type="text" id="searchBox" placeholder="Search by food court name or block..." onkeyup="searchCourts()">
+  <header class="top">
+    <a href="index.html" class="site-name">LPU Food Courts</a>
   </header>
 
-  <!-- ===== Food Courts List ===== -->
-  <section class="section">
-    <h2 class="section-title">📍 Select a Food Court</h2>
-    <div class="court-grid">
+  <main>
+    <h1>Where to eat on campus</h1>
+    <p class="intro">
+      Every food court at LPU, the stores inside it and what each dish costs.
+      Pick a food court to see its full menu.
+    </p>
 
-      <a class="court-card" href="uni-mall.html">
-        <div class="court-icon">🏬</div>
-        <div class="court-info">
-          <span class="badge featured">★ Featured</span>
-          <h3>Uni Mall Food Court</h3>
-          <p>📍 Uni Mall, LPU Campus</p>
-          <p class="muted">🕒 9:00 AM - 10:00 PM</p>
-          <p class="muted">⭐ 4.5 · 4 stores</p>
-        </div>
-      </a>
+    <input type="search" class="court-search" placeholder="Search by name or block" aria-label="Search food courts" oninput="search(this, '.courts li')">
 
-      <a class="court-card" href="block-34.html">
-        <div class="court-icon">🎓</div>
-        <div class="court-info">
-          <span class="badge featured">★ Featured</span>
-          <h3>Block 34 Food Court</h3>
-          <p>📍 Block 34, Academic Area, LPU Campus</p>
-          <p class="muted">🕒 8:00 AM - 8:00 PM</p>
-          <p class="muted">⭐ 4.3 · 3 stores</p>
-        </div>
-      </a>
-
-      <a class="court-card" href="block-32.html">
-        <div class="court-icon">🏫</div>
-        <div class="court-info">
-          <h3>Block 32 Food Court</h3>
-          <p>📍 Block 32, Academic Area, LPU Campus</p>
-          <p class="muted">🕒 8:30 AM - 7:30 PM</p>
-          <p class="muted">⭐ 4.2 · 3 stores</p>
-        </div>
-      </a>
-
-      <a class="court-card" href="boys-hostel.html">
-        <div class="court-icon">🏠</div>
-        <div class="court-info">
-          <h3>Boys Hostel Food Court</h3>
-          <p>📍 Boys Hostel Area, LPU Campus</p>
-          <p class="muted">🕒 7:30 AM - 11:30 PM</p>
-          <p class="muted">⭐ 4.1 · 3 stores</p>
-        </div>
-      </a>
-
-      <a class="court-card" href="girls-hostel.html">
-        <div class="court-icon">🏡</div>
-        <div class="court-info">
-          <h3>Girls Hostel Food Court</h3>
-          <p>📍 Girls Hostel Area, LPU Campus</p>
-          <p class="muted">🕒 7:30 AM - 10:30 PM</p>
-          <p class="muted">⭐ 4.3 · 3 stores</p>
-        </div>
-      </a>
-
-      <a class="court-card" href="main-gate.html">
-        <div class="court-icon">🚪</div>
-        <div class="court-info">
-          <h3>Main Gate Food Court</h3>
-          <p>📍 Near Main Gate, LPU Campus</p>
-          <p class="muted">🕒 9:00 AM - 9:00 PM</p>
-          <p class="muted">⭐ 4.0 · 3 stores</p>
-        </div>
-      </a>
-
-      <p class="empty" id="noResult" hidden>No food court found.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>LPU Food Courts · First year CSE project</p>
-    <h3>Developed by:</h3>
-    <ul>
-      <li>Pratham Singh</li>
+    <!-- featured ones go on top -->
+    <ul class="courts">
+      <li>
+        <a href="uni-mall.html">
+          <span class="name">Uni Mall Food Court <span class="tag">Featured</span></span>
+          <span>Uni Mall</span>
+          <span>9:00 AM – 10:00 PM</span>
+          <span>4 stores</span>
+          <span class="rating">★ 4.5</span>
+        </a>
+      </li>
+      <li>
+        <a href="block-34.html">
+          <span class="name">Block 34 Food Court <span class="tag">Featured</span></span>
+          <span>Block 34, Academic Area</span>
+          <span>8:00 AM – 8:00 PM</span>
+          <span>3 stores</span>
+          <span class="rating">★ 4.3</span>
+        </a>
+      </li>
+      <li>
+        <a href="block-32.html">
+          <span class="name">Block 32 Food Court</span>
+          <span>Block 32, Academic Area</span>
+          <span>8:30 AM – 7:30 PM</span>
+          <span>3 stores</span>
+          <span class="rating">★ 4.2</span>
+        </a>
+      </li>
+      <li>
+        <a href="boys-hostel.html">
+          <span class="name">Boys Hostel Food Court</span>
+          <span>Boys Hostel Area</span>
+          <span>7:30 AM – 11:30 PM</span>
+          <span>3 stores</span>
+          <span class="rating">★ 4.1</span>
+        </a>
+      </li>
+      <li>
+        <a href="girls-hostel.html">
+          <span class="name">Girls Hostel Food Court</span>
+          <span>Girls Hostel Area</span>
+          <span>7:30 AM – 10:30 PM</span>
+          <span>3 stores</span>
+          <span class="rating">★ 4.3</span>
+        </a>
+      </li>
+      <li>
+        <a href="main-gate.html">
+          <span class="name">Main Gate Food Court</span>
+          <span>Near Main Gate</span>
+          <span>9:00 AM – 9:00 PM</span>
+          <span>3 stores</span>
+          <span class="rating">★ 4.0</span>
+        </a>
+      </li>
     </ul>
+    <p class="no-result">No food court by that name. Try a block number, like 34.</p>
+  </main>
+
+  <footer>
+    Made by Pratham Singh ,Garvit Chaudhary, Rishu Raj , first year CSE at LPU. Prices change now and then, so check at the counter.
   </footer>
 
   <script src="js/script.js"></script>

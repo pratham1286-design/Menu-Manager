@@ -3,155 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Block 32 Food Court - LPU Food Courts</title>
+  <title>Block 32 Food Court | LPU Food Courts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Young+Serif&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== Navigation Bar ===== -->
-  <nav class="navbar">
-    <a href="index.html" class="logo">🍔 LPU Food<span>Courts</span></a>
-  </nav>
-
-  <!-- ===== Food Court Details ===== -->
-  <header class="court-header">
-    <a href="index.html" class="back-link">← All food courts</a>
-    <h1>🏫 Block 32 Food Court</h1>
-    <p>📍 Block 32, Academic Area, LPU Campus</p>
-    <p>🕒 8:30 AM - 7:30 PM &nbsp; ⭐ 4.2 &nbsp; 🏪 3 stores</p>
+  <header class="top">
+    <a href="index.html" class="site-name">LPU Food Courts</a>
+    <a href="index.html">All food courts</a>
   </header>
 
-  <!-- ===== Stores and Menus ===== -->
-  <section class="section">
+  <main>
+    <h1>Block 32 Food Court</h1>
+    <p class="where">Block 32, Academic Area</p>
 
-    <!-- Jump to a store -->
-    <div class="store-links">
+    <dl class="facts">
+      <div><dt>Open</dt><dd>8:30 AM – 7:30 PM</dd></div>
+      <div><dt>Rating</dt><dd>★ 4.2</dd></div>
+      <div><dt>Stores</dt><dd>3</dd></div>
+    </dl>
+
+    <p class="jump">Jump to:
       <a href="#south-spice">South Spice</a>
-      <a href="#rolls-and-wraps-co">Rolls & Wraps Co.</a>
+      <a href="#rolls-and-wraps-co">Rolls &amp; Wraps Co.</a>
       <a href="#chaat-bazaar">Chaat Bazaar</a>
-    </div>
+    </p>
 
-    <!-- Dish search, sort and veg filter -->
-    <div class="filters">
-      <input type="text" id="dishSearch" placeholder="🔍 Search a dish..." onkeyup="filterMenu()">
-      <select id="sortBy">
-        <option value="default">Sort: Recommended</option>
-        <option value="low">Price: Low to High</option>
-        <option value="high">Price: High to Low</option>
-      </select>
-      <label class="veg-toggle">
-        <input type="checkbox" id="vegOnly" onchange="filterMenu()"> Veg only
+    <div class="tools">
+      <input type="search" placeholder="Search a dish" aria-label="Search a dish" oninput="search(this, '.dish')">
+      <label>Sort
+        <select id="sort">
+          <option value="none">as listed</option>
+          <option value="low">cheapest first</option>
+          <option value="high">costliest first</option>
+        </select>
       </label>
+      <label class="veg-only"><input type="checkbox" id="vegOnly"> Veg only</label>
     </div>
 
-    <!-- South Spice -->
-    <div class="store-card" id="south-spice">
-      <div class="store-head">
-        <div>
-          <h2>South Spice</h2>
-          <p class="muted">South Indian</p>
-        </div>
-        <span class="rating">⭐ 4.5</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 80">
-          <p><span class="veg-dot"></span>Masala Dosa <span class="badge best">Bestseller</span></p>
-          <p class="price">₹80</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Idli Sambar (4 pcs)</p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Medu Vada (3 pcs)</p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 110">
-          <p><span class="veg-dot"></span>Paneer Dosa <span class="badge best">Bestseller</span></p>
-          <p class="price">₹110</p>
-        </li>
-        <li class="dish veg" style="--price: 35">
-          <p><span class="veg-dot"></span>Filter Coffee</p>
-          <p class="price">₹35</p>
-        </li>
-      </ul>
+    <div class="menu">
+
+      <section class="store" id="south-spice">
+        <h2>South Spice <span class="rating">★ 4.5</span></h2>
+        <p class="cuisine">South Indian</p>
+        <ul>
+          <li class="dish veg" style="--price: 80"><span>Masala Dosa <small>Bestseller</small></span> <b>₹80</b></li>
+          <li class="dish veg" style="--price: 60"><span>Idli Sambar (4 pcs)</span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 60"><span>Medu Vada (3 pcs)</span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 110"><span>Paneer Dosa <small>Bestseller</small></span> <b>₹110</b></li>
+          <li class="dish veg" style="--price: 35"><span>Filter Coffee</span> <b>₹35</b></li>
+        </ul>
+      </section>
+
+      <section class="store" id="rolls-and-wraps-co">
+        <h2>Rolls &amp; Wraps Co. <span class="rating">★ 4.0</span></h2>
+        <p class="cuisine">Fast Food</p>
+        <ul>
+          <li class="dish veg" style="--price: 90"><span>Paneer Tikka Roll <small>Bestseller</small></span> <b>₹90</b></li>
+          <li class="dish nonveg" style="--price: 70"><span>Egg Roll</span> <b>₹70</b></li>
+          <li class="dish nonveg" style="--price: 120"><span>Chicken Seekh Roll <small>Bestseller</small></span> <b>₹120</b></li>
+          <li class="dish veg" style="--price: 60"><span>Aloo Tikki Burger</span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 70"><span>French Fries</span> <b>₹70</b></li>
+        </ul>
+      </section>
+
+      <section class="store" id="chaat-bazaar">
+        <h2>Chaat Bazaar <span class="rating">★ 4.3</span></h2>
+        <p class="cuisine">Street Food</p>
+        <ul>
+          <li class="dish veg" style="--price: 40"><span>Pani Puri (8 pcs) <small>Bestseller</small></span> <b>₹40</b></li>
+          <li class="dish veg" style="--price: 60"><span>Papdi Chaat</span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 60"><span>Aloo Tikki Chaat <small>Bestseller</small></span> <b>₹60</b></li>
+          <li class="dish veg" style="--price: 90"><span>Pav Bhaji</span> <b>₹90</b></li>
+          <li class="dish veg" style="--price: 60"><span>Dahi Bhalla</span> <b>₹60</b></li>
+        </ul>
+      </section>
     </div>
+    <p class="no-result">No dish matches that. Try another name, or untick "Veg only".</p>
+  </main>
 
-    <!-- Rolls & Wraps Co. -->
-    <div class="store-card" id="rolls-and-wraps-co">
-      <div class="store-head">
-        <div>
-          <h2>Rolls & Wraps Co.</h2>
-          <p class="muted">Fast Food</p>
-        </div>
-        <span class="rating">⭐ 4.0</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 90">
-          <p><span class="veg-dot"></span>Paneer Tikka Roll <span class="badge best">Bestseller</span></p>
-          <p class="price">₹90</p>
-        </li>
-        <li class="dish nonveg" style="--price: 70">
-          <p><span class="nonveg-dot"></span>Egg Roll</p>
-          <p class="price">₹70</p>
-        </li>
-        <li class="dish nonveg" style="--price: 120">
-          <p><span class="nonveg-dot"></span>Chicken Seekh Roll <span class="badge best">Bestseller</span></p>
-          <p class="price">₹120</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Aloo Tikki Burger</p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 70">
-          <p><span class="veg-dot"></span>French Fries</p>
-          <p class="price">₹70</p>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Chaat Bazaar -->
-    <div class="store-card" id="chaat-bazaar">
-      <div class="store-head">
-        <div>
-          <h2>Chaat Bazaar</h2>
-          <p class="muted">Street Food</p>
-        </div>
-        <span class="rating">⭐ 4.3</span>
-      </div>
-      <ul class="dishes">
-        <li class="dish veg" style="--price: 40">
-          <p><span class="veg-dot"></span>Pani Puri (8 pcs) <span class="badge best">Bestseller</span></p>
-          <p class="price">₹40</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Papdi Chaat</p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Aloo Tikki Chaat <span class="badge best">Bestseller</span></p>
-          <p class="price">₹60</p>
-        </li>
-        <li class="dish veg" style="--price: 90">
-          <p><span class="veg-dot"></span>Pav Bhaji</p>
-          <p class="price">₹90</p>
-        </li>
-        <li class="dish veg" style="--price: 60">
-          <p><span class="veg-dot"></span>Dahi Bhalla</p>
-          <p class="price">₹60</p>
-        </li>
-      </ul>
-    </div>
-
-    <p class="empty" id="noResult" hidden>No dish found. Try a different search.</p>
-  </section>
-
-  <footer class="footer">
-    <p>LPU Food Courts · First year CSE project</p>
-    <h3>Developed by:</h3>
-    <ul>
-      <li>Pratham Singh</li>
-    </ul>
+  <footer>
+    Made by Pratham Singh, first year CSE at LPU. Prices change now and then, so check at the counter.
   </footer>
 
   <script src="js/script.js"></script>
