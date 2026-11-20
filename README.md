@@ -38,3 +38,4 @@ Write the price in **both** places (`--price` and the `₹` text). Use `veg` or 
 1. Copy one of the food court pages (say `main-gate.html`) and rename it.
 2. Change the name, place, timings, stores and dishes.
 3. In `index.html`, copy one `<li>` in the list, point its link to the new page and change the details.
+
