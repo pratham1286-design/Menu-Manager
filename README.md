@@ -39,3 +39,9 @@ Write the price in **both** places (`--price` and the `₹` text). Use `veg` or 
 2. Change the name, place, timings, stores and dishes.
 3. In `index.html`, copy one `<li>` in the list, point its link to the new page and change the details.
 
+
+## Contributors
+
+| Contributor | Contributions |
+| --- | --- |
+| [Rishu Raj (@xocrisk)](https://github.com/xocrisk) | CSS styling (`css/style.css`), Block 32 page (`block-32.html`), and Block 34 page (`block-34.html`) |
